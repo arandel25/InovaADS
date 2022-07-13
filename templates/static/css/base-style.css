@@ -1,0 +1,26 @@
+
+#corpo{
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 50px;
+    align-items: center;
+    }
+   
+#pesquisa{
+    justify-items: center;
+    align-items: center;
+}
+
+body{
+    background-color: #5a5858;
+}
+
+.btn-outline-success {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+h1{
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}

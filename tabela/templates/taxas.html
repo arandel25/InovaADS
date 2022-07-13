@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+  {% include 'partials/messages.html' %}
+  <h1>Taxas</h1>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Taxas</th>
+        <th scope="col">%</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for a in gastos %}
+      <tr>
+        <td>{{a.nome}}</td>
+        <td>{{a.valor}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+<form method="POST" action="{% url 'taxa' %}">{% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="nome">Descrição</label>
+      <input required="required" name="nome" type="text" class="form-control" id="gasto" aria-describedby="emailHelp" placeholder="Descrição">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="telefone">Valor</label>
+      <input required="required" maxlength="14" name="gasto" type="text" class="form-control" id="valor" aria-describedby="telefoneHelp" placeholder="Porcentagem">
+    </div>
+    <input type="hidden" id="tipo" name="tipo" value="taxa">
+  </div>
+<button type="submit" class="btn btn-outline-light">Adicionar Gasto</button>
+</form>
+<br>
+<a type="button" href="{% url 'horas' %}" class="btn btn-outline-light">Avançar</a>
+{% endblock container %}
+
+
+

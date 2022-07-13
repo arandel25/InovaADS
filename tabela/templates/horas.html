@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+  {% include 'partials/messages.html' %}
+  <h1>Horas Trabalhadas pela empresa</h1>
+
+<form method="POST" action="{% url 'horas' %}">{% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="nome">Descrição</label>
+      <input value="Horas trabalhadas no mês" required="required" name="nome" type="text" class="form-control" id="gasto" aria-describedby="emailHelp" placeholder="Descrição">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="telefone">Valor</label>
+      <input required="required" maxlength="14" name="gasto" type="number" class="form-control" id="valor" aria-describedby="telefoneHelp">
+    </div>
+    <input type="hidden" id="tipo" name="tipo" value="horas">
+  </div>
+<button type="submit" class="btn btn-outline-light">Adicionar Gasto</button>
+</form>
+{% endblock container %}
+
+
+
